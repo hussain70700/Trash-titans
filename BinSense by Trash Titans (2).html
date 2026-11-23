@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>BinSense by Trash Titans</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{--bg:#f4f6f1;--sf:#fff;--tx:#14231f;--mu:#566660;--ac:#1f9d73;--ac2:#f2b84b;--bd:#d9e0d6;--dk:#10231f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a17;--sf:#162924;--tx:#eaf1ec;--mu:#9fb3aa;--bd:#2a403a;--dk:#08110f}}
+:root[data-theme="dark"]{--bg:#0e1a17;--sf:#162924;--tx:#eaf1ec;--mu:#9fb3aa;--bd:#2a403a;--dk:#08110f}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--dk);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 20px;flex-wrap:wrap}
+header b{font-size:20px}header b span{color:var(--ac2)}
+nav{display:flex;gap:4px;flex-wrap:wrap}nav a{color:#cfe3da;text-decoration:none;padding:6px 12px;border-radius:8px;font-size:15px}nav a:hover{background:#ffffff1f;color:#fff}
+section{max-width:1080px;margin:0 auto;padding:56px 20px}
+h1{font-size:clamp(40px,8vw,72px);line-height:1.05;margin:8px 0}h2{font-size:30px;margin:0 0 8px}h3{margin:0 0 6px}
+.hero{background:var(--dk);color:#fff;max-width:none;padding:72px 20px}.hero>div{max-width:1040px;margin:0 auto}
+.hero h1 span{color:var(--ac2)}.tag{display:inline-block;background:#ffffff1f;border-radius:20px;padding:4px 14px;font-size:14px}
+.hero p{max-width:640px;color:#cfe3da;font-size:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:14px;padding:18px}
+.card p{margin:0;color:var(--mu)}
+.flow{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.flow span{background:var(--ac);color:#fff;border-radius:20px;padding:6px 14px;font-size:14px}
+.btn{background:var(--ac);color:#fff;border:0;border-radius:10px;padding:10px 18px;font-size:15px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.o{background:transparent;border:1px solid var(--ac);color:var(--ac)}.btn.on{background:var(--ac);color:#fff}
+#c{height:400px;border-radius:14px;background:linear-gradient(#cfe6dc,#eef4ee);border:1px solid var(--bd);touch-action:none;cursor:grab;overflow:hidden}
+#c canvas{display:block;width:100%;height:100%}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0}
+.bar input[type=range]{flex:1;min-width:160px}
+.note{color:var(--mu);font-size:14px}
+label{display:block;font-size:14px;margin-bottom:12px}
+input,select{width:100%;padding:10px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font-size:15px;margin-top:4px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.two{grid-template-columns:1fr}}
+#dash{display:none}
+.row{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--bd)}
+.meter{flex:1;height:10px;background:var(--bd);border-radius:6px;overflow:hidden;min-width:80px}.meter i{display:block;height:100%}
+.alert{background:#e5484d22;border:1px solid #e5484d;color:var(--tx);padding:10px 14px;border-radius:10px;margin:12px 0;display:none}
+.pill{border-radius:20px;padding:2px 10px;font-size:13px;color:#fff}
+footer{background:var(--dk);color:#cfe3da;text-align:center;padding:20px;font-size:14px}
+a{color:var(--ac)}
+</style></head><body>
+<header><b>Bin<span>Sense</span></b><nav><a href="#home">Home</a><a href="#model">3D Model</a><a href="#register">Register Now</a><a href="#contact">Contact Us</a></nav></header>
+
+<section class="hero" id="home"><div>
+<span class="tag">Team Trash Titans · ICT for Smart Cities and Healthy Sustainable Living</span>
+<h1>Bin<span>Sense</span></h1>
+<p>A smart waste bin service that tells collectors which bins are actually full, so cities save fuel, time and health.</p>
+<p><a class="btn" href="#register">Register now</a> <a class="btn o" style="color:#fff;border-color:#fff" href="#model">Explore the 3D model</a></p>
+</div></section>
+
+<section><h2>Purpose</h2>
+<p class="note">The problem we saw, why we took it on, and how we built BinSense</p>
+<div class="grid">
+<div class="card"><h3>The problem in society</h3><p>In many cities, including ours, waste collection runs on fixed routes and schedules. Trucks visit every bin whether it is empty or full.</p><p style="margin-top:8px">The result is two problems at once: some bins overflow between visits, spilling waste onto the street, attracting pests and spreading odour, while other stops are wasted trips that burn fuel and time. Nobody has live information about which bins actually need attention.</p></div>
+<div class="card"><h3>Why we chose it</h3><p>The theme asks for ICT that makes cities smarter and living healthier and more sustainable. Waste is something everyone sees every day, it affects public health, and the fix is mostly about having the right information rather than building new infrastructure.</p><p style="margin-top:8px">It also suits a small, low-cost ESP32 prototype that can grow into a paid service for societies, markets and campuses.</p></div>
+<div class="card"><h3>How we did it</h3><p>An ultrasonic sensor in the bin lid measures how full the bin is. An ESP32 turns that into a percentage, shows it on a small OLED at the bin and sends it over Wi-Fi to the cloud.</p><p style="margin-top:8px">A dashboard flags any bin above 80% and gives collectors a route list, so they visit only the bins that need emptying. Clients subscribe per bin and pay by JazzCash or Easypaisa.</p></div>
+</div></section>
+
+<section style="padding-top:0"><h2>Design</h2>
+<p class="note">How data moves through the system</p>
+<div class="flow"><span>1 HC-SR04 sensor</span><span>2 ESP32 + OLED</span><span>3 Wi-Fi (MQTT/HTTP)</span><span>4 Cloud</span><span>5 Dashboard + alerts</span><span>6 JazzCash / Easypaisa</span></div>
+<div class="grid">
+<div class="card"><h3>At the bin</h3><p>The ESP32 wakes from deep sleep, triggers the ultrasonic sensor, converts distance to fill percentage and shows it on the OLED.</p></div>
+<div class="card"><h3>In the cloud</h3><p>Each reading is stored with a timestamp. Above 80% the bin is flagged full and an alert is raised.</p></div>
+<div class="card"><h3>For the client</h3><p>A dashboard shows every bin, a collector route list and the monthly payment status.</p></div>
+</div></section>
+
+<section id="model" style="padding-top:0"><h2>3D Model</h2>
+<p class="note">Drag to rotate, scroll or use the zoom buttons. Move the slider to change the waste level.</p>
+<div class="bar"><button class="btn on" id="mLab">Lab design</button><button class="btn o" id="mPrac">Practical representation</button>
+<button class="btn o" id="zi">Zoom +</button><button class="btn o" id="zo">Zoom −</button></div>
+<div id="c"></div>
+<div class="bar"><label style="margin:0">Fill level: <b id="fv">45</b>%</label><input id="fs" type="range" min="0" max="100" value="45"></div>
+<p class="note" id="cap"></p></section>
+
+<section id="register" style="padding-top:0"><h2>Register Now</h2>
+<p class="note">Fill in the form to open your BinSense client dashboard. This is a demo: no real payment is taken.</p>
+<div class="card" id="regCard"><form id="f">
+<div class="two"><label>Full name<input name="n" required></label><label>Organization<input name="o" required></label></div>
+<div class="two"><label>Email<input name="e" type="email" required></label><label>Phone<input name="p" type="tel" required></label></div>
+<div class="two"><label>Location<input name="l" placeholder="e.g. Block A, Islamabad" required></label><label>Number of bins (1–6)<input name="b" type="number" min="1" max="6" value="3" required></label></div>
+<label>Preferred wallet<select name="w"><option>JazzCash</option><option>Easypaisa</option><option>Other digital wallet</option></select></label>
+<button class="btn" type="submit">Create my dashboard</button></form></div>
+
+<div id="dash" class="card">
+<h3 id="dh"></h3><p class="note" id="ds"></p>
+<div class="alert" id="al"></div>
+<div id="bl"></div>
+<div class="grid">
+<div class="card"><h3>Collector route</h3><p id="rt">No bins need emptying yet.</p></div>
+<div class="card"><h3>Subscription</h3><p id="pm"></p><p style="margin-top:10px"><button class="btn" id="pay">Pay now (demo)</button></p></div>
+</div></div></section>
+
+<section id="contact" style="padding-top:0"><h2>Contact Us</h2>
+<div class="grid">
+<div class="card"><h3>Address</h3><p>A Block, Air University</p></div>
+<div class="card"><h3>Phone</h3><p>Muhammad Junaid: <a href="tel:03337780033">0333-7780033</a><br>Muhammad Hussain: <a href="tel:03036604343">0303-6604343</a></p></div>
+<div class="card"><h3>Email</h3><p><a href="mailto:2600802@students.au.edu.pk">2600802@students.au.edu.pk</a><br><a href="mailto:2600768@students.au.edu.pk">2600768@students.au.edu.pk</a></p></div>
+</div></section>
+<footer>BinSense · Trash Titans · Air University</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+var el=document.getElementById('c'),ren;
+try{ren=new THREE.WebGLRenderer({antialias:true,alpha:true})}catch(e){el.innerHTML='<p style="padding:20px">The 3D view needs WebGL.</p>';return}
+var sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(45,1,.1,100);
+ren.setPixelRatio(Math.min(devicePixelRatio,2));el.appendChild(ren.domElement);
+sc.add(new THREE.AmbientLight(0xffffff,.75));var dl=new THREE.DirectionalLight(0xffffff,.9);dl.position.set(5,8,6);sc.add(dl);
+var M=function(c,o){return new THREE.MeshStandardMaterial(Object.assign({color:c,roughness:.6},o||{}))};
+var B=function(w,h,d){return new THREE.BoxGeometry(w,h,d)},C=function(r,h,rb){return new THREE.CylinderGeometry(r,rb||r,h,32)};
+function add(g,geo,mat,x,y,z){var m=new THREE.Mesh(geo,mat);m.position.set(x,y,z);g.add(m);return m}
+function wire(g,a,b,c){var d=new THREE.Vector3().subVectors(b,a),m=new THREE.Mesh(new THREE.CylinderGeometry(.03,.03,d.length(),6),M(c));m.position.copy(a).add(b).multiplyScalar(.5);m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.clone().normalize());g.add(m)}
+var V=function(x,y,z){return new THREE.Vector3(x,y,z)};
+var cv=document.createElement('canvas');cv.width=128;cv.height=64;var cx=cv.getContext('2d'),tex=new THREE.CanvasTexture(cv);
+function oled(v){cx.fillStyle='#021';cx.fillRect(0,0,128,64);cx.fillStyle='#7ff';cx.font='12px monospace';cx.fillText('BinSense',6,16);cx.font='bold 30px monospace';cx.fillText(v+'%',6,50);tex.needsUpdate=true}
+var scr=new THREE.MeshBasicMaterial({map:tex});
+var pivot=new THREE.Group();sc.add(pivot);
+/* Lab design */
+var L=new THREE.Group();pivot.add(L);
+add(L,B(9,.3,5.5),M(0xb08a5a),0,-.15,0);add(L,B(4.6,.18,2.4),M(0xf1efe6),-1.6,.09,0);
+add(L,B(1.9,.08,.8),M(0x1a2a5e),-2.6,.22,-.3);add(L,B(.7,.04,.5),M(0xcccccc),-2.4,.28,-.3);add(L,B(.5,.03,.5),M(0x222222),-3.3,.27,-.3);
+add(L,B(1,.08,.6),M(0x111111),-.6,.22,.5);var s1=add(L,new THREE.PlaneGeometry(.8,.4),scr,-.6,.27,.5);s1.rotation.x=-Math.PI/2;
+add(L,B(1.6,.15,.7),M(0x1d6fd1),2.6,2.9,0);add(L,C(.28,.2),M(0xcccccc),2.3,2.75,0);add(L,C(.28,.2),M(0xcccccc),2.9,2.75,0);
+add(L,C(.05,3),M(0x555555),3.6,1.5,0);add(L,B(1,.08,.1),M(0x555555),3.1,3,0);
+add(L,C(.9,2.2),M(0x99aadd,{transparent:true,opacity:.3,side:THREE.DoubleSide}),2.6,1.1,0);
+var fl=add(L,C(.85,1),M(0x1f9d73),2.6,.1,0);
+wire(L,V(-1.8,.3,-.3),V(-.6,.3,.5),0xe33333);wire(L,V(-1.7,.3,-.1),V(2.2,2.95,0),0xff9900);wire(L,V(-1.7,.3,0),V(2.0,2.9,.1),0x333333);
+/* Practical */
+var P=new THREE.Group();pivot.add(P);P.visible=false;
+add(P,C(5,.2),M(0x8d9a93),0,-.1,0);
+add(P,C(1,3,.85),M(0x1f7a55,{transparent:true,opacity:.35,side:THREE.DoubleSide}),0,1.6,0);
+var fp=add(P,C(.88,1),M(0x1f9d73),0,.1,0);
+add(P,C(1.1,.25),M(0x174c38),0,3.2,0);add(P,B(.7,.1,.3),M(0x1d6fd1),0,3.02,0);
+add(P,C(.05,.5),M(0x444444),0,3.55,0);var sp=add(P,B(1.6,.08,1),M(0x1c3f8f),0,3.85,0);sp.rotation.x=.4;
+add(P,B(.7,.45,.08),M(0x111111),0,2.4,.98);var s2=add(P,new THREE.PlaneGeometry(.6,.3),scr,0,2.4,1.025);
+var rings=[];for(var i=0;i<3;i++){var r=add(P,new THREE.TorusGeometry(.4+i*.3,.03,8,32),M(0x2f8fe0),0,4.7,0);r.rotation.x=Math.PI/2;rings.push(r)}
+[[3.4,4.3],[3.9,4.5],[4.4,4.3],[3.9,4.1]].forEach(function(p){add(P,new THREE.SphereGeometry(.45,16,16),M(0xffffff),p[0],p[1],0)});
+wire(P,V(.6,4.5,0),V(3,4.3,0),0x2f8fe0);
+/* controls */
+var rotY=.6,rotX=.25,dist=11,mode='lab',fill=45,drag=false,px=0,py=0;
+var caps={lab:'Lab design: an ESP32, HC-SR04 ultrasonic sensor and OLED wired on a breadboard, measuring a mini bin.',prac:'Practical representation: the sensor sits under the lid, the OLED shows the level on the bin, a solar panel powers it and Wi-Fi sends data to the cloud.'};
+function setFill(v){fill=v;document.getElementById('fv').textContent=v;var c=v>=80?0xe5484d:v>=50?0xf2b84b:0x1f9d73;
+[[fl,2.0],[fp,2.8]].forEach(function(a){var h=Math.max(.02,v/100*a[1]);a[0].scale.y=h;a[0].position.y=.1+h/2;a[0].material.color.setHex(c)});oled(v)}
+function setMode(m){mode=m;L.visible=m==='lab';P.visible=m==='prac';dist=m==='lab'?11:10;
+document.getElementById('mLab').className='btn '+(m==='lab'?'on':'o');document.getElementById('mPrac').className='btn '+(m==='prac'?'on':'o');
+document.getElementById('cap').textContent=caps[m];pivot.position.set(m==='lab'?-.4:0,m==='lab'?-1:-1.5,0)}
+document.getElementById('mLab').onclick=function(){setMode('lab')};document.getElementById('mPrac').onclick=function(){setMode('prac')};
+document.getElementById('fs').oninput=function(){setFill(+this.value)};
+document.getElementById('zi').onclick=function(){dist=Math.max(5,dist-1.5)};document.getElementById('zo').onclick=function(){dist=Math.min(18,dist+1.5)};
+el.addEventListener('pointerdown',function(e){drag=true;px=e.clientX;py=e.clientY;el.setPointerCapture(e.pointerId)});
+el.addEventListener('pointerup',function(){drag=false});
+el.addEventListener('pointermove',function(e){if(!drag)return;rotY-=(e.clientX-px)*.008;rotX=Math.max(-.2,Math.min(1.2,rotX+(e.clientY-py)*.006));px=e.clientX;py=e.clientY});
+el.addEventListener('wheel',function(e){e.preventDefault();dist=Math.max(5,Math.min(18,dist+e.deltaY*.01))},{passive:false});
+function rs(){var w=el.clientWidth,h=el.clientHeight;ren.setSize(w,h);cam.aspect=w/h;cam.updateProjectionMatrix()}
+window.addEventListener('resize',rs);rs();setFill(45);setMode('lab');
+var t=0;(function loop(){requestAnimationFrame(loop);t+=.02;
+cam.position.set(Math.sin(rotY)*Math.cos(rotX)*dist,Math.sin(rotX)*dist+1.5,Math.cos(rotY)*Math.cos(rotX)*dist);cam.lookAt(0,1.2,0);
+rings.forEach(function(r,i){var s=1+.15*Math.sin(t*2+i);r.scale.set(s,s,s)});ren.render(sc,cam)})();
+})();
+
+/* Client dashboard (demo data) */
+(function(){
+var bins=[],price=800,paid=false,cl=null;
+var $=function(i){return document.getElementById(i)};
+$('f').addEventListener('submit',function(e){e.preventDefault();var d=new FormData(e.target);
+cl={n:d.get('n'),o:d.get('o'),l:d.get('l'),w:d.get('w'),b:Math.min(6,Math.max(1,+d.get('b')||1))};
+bins=[];for(var i=0;i<cl.b;i++)bins.push({id:'BS-'+(101+i),lv:Math.round(15+Math.random()*70)});
+$('regCard').style.display='none';$('dash').style.display='block';
+$('dh').textContent='Welcome, '+cl.n+' ('+cl.o+')';$('ds').textContent=cl.l+' · '+cl.b+' bin'+(cl.b>1?'s':'')+' · wallet: '+cl.w;
+$('pm').textContent='Sample plan: PKR '+(price*cl.b).toLocaleString()+' per month ('+cl.b+' × PKR '+price+'). Status: Unpaid.';
+draw();$('dash').scrollIntoView({behavior:'smooth'})});
+$('pay').onclick=function(){paid=true;$('pm').textContent='Paid via '+cl.w+' (demo). Your account is active.';this.style.display='none'};
+function col(v){return v>=80?'#e5484d':v>=50?'#f2b84b':'#1f9d73'}
+function draw(){var h='',full=[];bins.forEach(function(b){var s=b.lv>=80?'Full':b.lv>=50?'Half':'OK';if(b.lv>=80)full.push(b.id);
+h+='<div class="row"><b>'+b.id+'</b><div class="meter"><i style="width:'+b.lv+'%;background:'+col(b.lv)+'"></i></div><span>'+b.lv+'%</span><span class="pill" style="background:'+col(b.lv)+'">'+s+'</span></div>'});
+$('bl').innerHTML=h;var a=$('al');a.style.display=full.length?'block':'none';a.textContent='Alert: '+full.join(', ')+' above 80%. Collection needed.';
+$('rt').textContent=full.length?'Empty in this order: '+full.join(' → '):'No bins need emptying yet.'}
+setInterval(function(){if(!bins.length)return;bins.forEach(function(b){b.lv+=Math.round(Math.random()*4);if(b.lv>=100)b.lv=5});draw()},3000);
+})();
+</script></body></html>
